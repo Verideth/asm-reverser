@@ -14,6 +14,7 @@ reverser proc ; create a procedure called reverser
 		mov esi, [ebp + 12] ; ebp + 12 is the offset where the pointer to the src array is
 		mov ecx, [ebp + 16] ; mov the count register into the num_elements argument
 		test ecx, ecx ; check if num elements is not zero
+		jz done ; if num elements is zero it'll jump to the return and break out the procedure
 
 		lea esi, [esi + ecx * 4 - 4] ; this will get the final index of esi (esi + num_elements), with scale factor of 4 for DWORD integers
 		pushfd ; push flags
@@ -31,7 +32,8 @@ reverser proc ; create a procedure called reverser
 		pop edi ; procedure epilogue
 		pop esi ; procedure epilogue
 		pop ebp ; procedure epilogue
-
+done:
 		ret ; return the procedure
+		
 reverser endp ; end the procedure called reverser
 end ; end code section
