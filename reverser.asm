@@ -9,7 +9,7 @@ reverser proc ; create a procedure called reverser
 		push esi ; push source on the stack, see the C++ signature if you're having trouble understanding
 		push edi ; pust destination on the stack, see the C++ signature if you're having trouble understanding
 
-		xor eax, eax ; check if the caller hasn't put an invalid array size
+		xor eax, eax ; init to zero
 		mov edi, [ebp + 8] ; ebp + 8 is where the pointer to the destination array is
 		mov esi, [ebp + 12] ; ebp + 12 is the offset where the pointer to the src array is
 		mov ecx, [ebp + 16] ; mov the count register into the num_elements argument
