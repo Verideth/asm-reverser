@@ -32,6 +32,6 @@ reverser proc ; create a procedure called reverser
 		pop esi ; procedure epilogue
 		pop ebp ; procedure epilogue
 
-		ret
+		ret ; return the procedure
 reverser endp ; end the procedure called reverser
 end ; end code section
