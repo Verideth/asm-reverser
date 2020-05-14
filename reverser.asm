@@ -10,6 +10,8 @@ reverser proc ; create a procedure called reverser
 		push edi ; pust destination on the stack, see the C++ signature if you're having trouble understanding
 
 		xor eax, eax ; init to zero
+		; tip: ebp + 4 is where the return address lies. this is so the assembly
+		; knows where to return to after the procedure is done being ran
 		mov edi, [ebp + 8] ; ebp + 8 is where the pointer to the destination array is
 		mov esi, [ebp + 12] ; ebp + 12 is the offset where the pointer to the src array is
 		mov ecx, [ebp + 16] ; mov the count register into the num_elements argument
